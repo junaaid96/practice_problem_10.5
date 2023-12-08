@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Problem 10.5</title>
+</head>
+<body>
+    <h1>Inside App</h1>
+    <h3>Django Template Filters</h3>
+
+    <h4>add filter</h4>
+    <p>{{1}} + {{2}} = {{1|add:2}}</p>
+
+    <h4>addslashes filter</h4>
+    <p>{{"you're awesome" | addslashes}}</p>
+
+    <h4>capfirst filter</h4>
+    <p>{{"junaid" | capfirst}}</p>
+
+    <h4>center filter</h4>
+    <p>{{"junaid" | center:10}}</p>
+
+    <h4>cut filter</h4>
+    <p>{{"junaid" | cut:"u"}}</p>
+
+    <h4>date filter</h4>
+    <p>{{"now" | date:"Y-m-d"}}</p>
+
+    <h4>default filter</h4>
+    <p>{{"" | default:"junaid"}}</p>
+
+    <h4>dictsort filter from context data</h4>
+    <p>{{context_dict | dictsort:"age"}}</p>
+
+    <h4>divisibleby filter</h4>
+    <p>{{"10" | divisibleby:"2"}}</p>
+
+    <h4>escape filter</h4>
+    <p>{{"you&#x27re awesome &amp worthy" | escape}}</p>
+
+    <h4>filesizeformat filter</h4>
+    <p>{{"1000000" | filesizeformat}}</p>
+
+    <h4>first filter</h4>
+    <p>{{"junaid" | first}}</p>
+
+    <h4>join filter</h4>
+    <p>{{"junaid" | join:"-"}}</p>
+
+    <h4>last filter</h4>
+    <p>{{"junaid" | last}}</p>
+
+    <h4>length filter</h4>
+    <p>{{"junaid" | length}}</p>
+
+    <h4>linenumbers filter</h4>
+    <p>{{"junaid" | linenumbers}}</p>
+
+    <h4>lower filter</h4>
+    <p>{{"JUNAID" | lower}}</p>
+
+    <h4>make_list filter</h4>
+    <p>{{"junaid" | make_list}}</p>
+
+    <h4>random filter</h4>
+    <p>{{"junaid" | random}}</p>
+
+    <h4>slice filter</h4>
+    <p>{{"junaid" | slice:"1:4"}}</p>
+
+    <h4>slugify filter</h4>
+    <p>{{"junaid is a programmer" | slugify}}</p>
+
+    <h4>time filter using context data</h4>
+    {% for i in context_dict %}
+        <p>{{i.name}} last visited on {{i.visited | time:"h:i:s A"}}</p>
+    {% endfor %}
+
+    <h4>timesince filter</h4>
+    {% for i in context_dict %}
+        <p>{{i.name}} last visited on {{i.visited | timesince}} ago</p>
+    {% endfor %}
+
+    <h4>title filter</h4>
+    <p>{{"my FIRst PosT" | title}}</p>
+
+    <h4>truncatechars filter</h4>
+    <p>{{"junaid" | truncatechars:"3"}}</p>
+
+    <h4>truncatewords filter</h4>
+    <p>{{"junaid is a programmer" | truncatewords:"3"}}</p>
+
+    <h4>upper filter</h4>
+    <p>{{"junaid" | upper}}</p>
+
+    <h4>wordcount filter</h4>
+    <p>{{"junaid is a programmer" | wordcount}}</p>
+
+    <h4>unordered_list filter</h4>
+    <p>{{"junaid is a programmer" | unordered_list}}</p>
+
+</body> 
+</html>
